@@ -6,6 +6,7 @@ module.exports = defineConfig({
   lintOnSave: false,
   transpileDependencies: true,
   outputDir:"docs",
+  publicPath:process.env.VUE_BASE_URL,
   chainWebpack: (config) => {
     const types = ["vue-modules", "vue", "normal-modules", "normal"];
     types.forEach((type) =>
