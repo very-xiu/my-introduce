@@ -16,7 +16,9 @@ export const useThemeState = createGlobalState(
     // }
 
     // return { count, doubleCount, increment }
-
+    const githubUrl="https://github.com/very-xiu";
+    const giteeUrl="https://gitee.com/wufuwei";
+    const worksUrl="https://very-xiu.github.io/personal_works";
     // theme数据储存本地
     const theme = useStorage('theme','dark',localStorage)
     // 初始化主题
@@ -27,7 +29,7 @@ export const useThemeState = createGlobalState(
       document.body.setAttribute('data-theme',theme.value)
     }
 
-    return {theme,toggleTheme}
+    return {theme,toggleTheme,githubUrl,giteeUrl,worksUrl}
   }
 )
 

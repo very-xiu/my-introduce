@@ -2,7 +2,10 @@ const { defineConfig } = require("@vue/cli-service");
 const path = require("path");
 
 module.exports = defineConfig({
+  // 避免Eslint报错
+  lintOnSave: false,
   transpileDependencies: true,
+  outputDir:"docs",
   chainWebpack: (config) => {
     const types = ["vue-modules", "vue", "normal-modules", "normal"];
     types.forEach((type) =>

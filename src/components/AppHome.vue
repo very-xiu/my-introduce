@@ -3,10 +3,10 @@
     <div class="home__container container grid">
       <div class="home__content grid">
         <div class="home__social">
-          <a href="https://gitee.com/fangchenjia" target="_blank">
+          <a :href="giteeUrl" target="_blank">
             <i class="alicon alicon-gitee home__icon"></i>
           </a>
-          <a href="http://github.com/fangchenjia" target="_blank">
+          <a :href="githubUrl" target="_blank">
             <i class="alicon alicon-github home__icon"></i>
           </a>
         </div>
@@ -41,6 +41,7 @@
 
 <script>
 import MyOfficeScene from '@/components/MyOfficeScene.vue'
+import { useThemeState } from '@/store'
 import { ref, getCurrentInstance } from 'vue'
 export default {
   name: 'AppHome',
@@ -48,6 +49,7 @@ export default {
     MyOfficeScene,
   },
   setup() {
+    const {githubUrl,giteeUrl} = useThemeState()
     // 打字效果
     const {
       appContext: {
@@ -75,7 +77,7 @@ export default {
       }
     }
     writeText(titleText,'write')
-    return { titleTextArr }
+    return { titleTextArr,githubUrl,giteeUrl }
   },
 }
 </script>

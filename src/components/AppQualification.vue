@@ -47,20 +47,30 @@ export default {
       {
         title: 'qualification1__title',
         describe: 'qualification1__describe',
-        time: '2018-2022'
+        time: "graduation__time"
       },
       {
         title: 'qualification2__title',
         describe: 'qualification2__describe',
-        time: '2018-至今'
+        time: 'edu__work__time'
       }
     ])
     const workList = ref([
       {
         title: 'qualification3__title',
         describe: 'qualification3__describe',
-        time: '2018-至今'
-      }
+        time: 'work__time'
+      },
+      {
+        title: 'qualification4__title',
+        describe: 'qualification4__describe',
+        time: 'work__time4'
+      },
+      {
+        title: 'qualification4__title',
+        describe: 'qualification4__describe',
+        time: 'work__time5'
+      },
     ])
     return { curSeleced,educationList,workList }
   },

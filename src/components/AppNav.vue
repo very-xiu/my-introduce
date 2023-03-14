@@ -1,12 +1,13 @@
 <template>
   <nav class="nav container">
     <!-- logo -->
-    <a href="#" class="nav__logo">cosycosy</a>
+    <a href="#" class="nav__logo">{{ $t('nav__name') }}</a>
 
     <div :class="['nav__menu',menuShow ? 'nav__menu--show' : '']">
       <ul class="nav__list grid">
         <li class="nav__item" v-for="item in menuList" :key="item.name">
-          <a :href="item.href" class="nav__link">
+          <a :href="item.href" class="nav__link" :target="item.target
+          ">
             <i class="alicon nav__icon" :class="[item.icon]"></i>
             <p>{{ $t(item.name) }}</p>
           </a>
@@ -52,31 +53,37 @@ export default {
         name: 'home',
         href: '#home',
         icon: 'alicon-zhuye',
+        target:"",
       },
       {
         name: 'about',
         href: '#about',
         icon: 'alicon-user',
+        target:"",
       },
       {
         name: 'skills',
         href: '#skills',
         icon: 'alicon-yuzhijineng',
+        target:"",
       },
       {
         name: 'portfolio',
         href: '#portfolio',
         icon: 'alicon-wodezuopin',
+        target:"",
       },
       {
         name: 'blog',
-        href: 'https://cosycosy.cn',
+        href: themeState.worksUrl,
         icon: 'alicon-zhuanyeyukecheng',
+        target:"_blank",
       },
       {
         name: 'contact',
         href: '#contact',
         icon: 'alicon-lianxi',
+        target:"",
       },
     ])
     // 切换语言

@@ -46,12 +46,20 @@ export default {
         percentage: '80%'
       },
       {
+        title: 'react',
+        percentage: '80%'
+      },
+      {
+        title: 'typescript',
+        percentage: '50%'
+      },
+      {
         title: 'threejs',
         percentage: '30%'
       },
       {
         title: 'node',
-        percentage: '60%'
+        percentage: '20%'
       }
     ])
     return {skills}

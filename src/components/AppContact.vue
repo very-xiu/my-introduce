@@ -8,7 +8,7 @@
         <div class="contact__information">
           <i class="alicon alicon-lianxi contact__icon"></i>
 
-          <div>
+          <div :style="textStyle">
             <h3 class="contact__title" >{{ $t('tel') }}</h3>
             <span class="contact__subtitle">{{ $t('tel__number') }}</span>
           </div>
@@ -17,25 +17,38 @@
         <div class="contact__information">
           <i class="alicon alicon-envelope contact__icon"></i>
 
-          <div>
+          <div :style="textStyle">
             <h3 class="contact__title" >{{ $t('email') }}</h3>
-            <span class="contatc__subtitle">{{ $t('email__address') }}</span>
+            <span class="contact__subtitle">{{ $t('email__address') }}</span>
           </div>
         </div>
 
         <div class="contact__information">
           <i class="alicon alicon-map1 contact__icon"></i>
 
-          <div>
+          <div :style="textStyle">
             <h3 class="contact__title" >{{ $t('location') }}</h3>
-            <span class="contatc__subtitle">{{ $t('location__detail') }}</span>
+            <span class="contact__subtitle">{{ $t('location__detail') }}</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+  export default{
+    name:"AppContact",
+    setup() {
+      
+      return {
+        textStyle:{display: 'flex',alignItems: 'center'}
+      }
+    },
+  }
+</script>
 <style lang="scss" scoped>
+
 .contact {
   &__container {
     row-gap: 3rem;
@@ -55,13 +68,21 @@
     margin-right: var(--mb-0-75);
   }
 
+  &__title{
+    padding-right: 0.5rem;
+  }
+
   .content__title {
     font-size: var(--h3-font-size);
     font-weight: var(--font-medium);
   }
 
   &__subtitle {
+    display: flex;
     font-size: var(--small-font-size);
+    height: 1.4rem;
+    line-height: 1.4rem;
+    padding-top: 0.15rem;
     color: var(--text-color-light);
   }
 

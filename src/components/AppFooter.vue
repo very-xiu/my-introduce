@@ -3,40 +3,55 @@
     <div class="footer__bg">
       <div class="footer__container container grid">
         <div>
-          <h1 class="footer__title">cosycosy</h1>
-          <span class="footer__subtitle" >{{ $t('home__subtitle') }}</span>
+          <h1 class="footer__title">{{ $t("nav__name") }}</h1>
+          <span class="footer__subtitle">{{ $t("home__subtitle") }}</span>
         </div>
 
         <ul class="footer__links">
           <li>
-            <a href="#skills" class="footer__link" >{{ $t('skills') }}</a>
+            <a href="#skills" class="footer__link">{{ $t("skills") }}</a>
           </li>
           <li>
-            <a href="#portfolio" class="footer__link" >{{ $t('portfolio') }}</a>
+            <a href="#portfolio" class="footer__link">{{ $t("portfolio") }}</a>
           </li>
           <li>
-            <a href="#contact" class="footer__link" >{{ $t('contact') }}</a>
+            <a href="#contact" class="footer__link">{{ $t("contact") }}</a>
           </li>
         </ul>
 
         <div class="footer__socials">
-          <a href="https://gitee.com/fangchenjia/" target="_blank">
+          <a :href="storeData.giteeUrl" target="_blank">
             <i class="alicon alicon-gitee footer__social"></i>
           </a>
-          <a href="http://github.com/changchenjia" target="_blank">
+          <a :href="storeData.githubUrl" target="_blank">
             <i class="alicon alicon-github footer__social"></i>
           </a>
         </div>
       </div>
 
       <p class="footer__copy">
-        &#169; COSYCOSY.Copy from
-        <a class="footer__copy" href="https://www.youtube.com/c/Bedimcode"
-          target="_blank">Bedimcode</a>
+        &#169; {{ $t("nav__name") }} {{ $t("from__text") }}
+        <a
+          class="footer__copy"
+          href="https://www.youtube.com/c/Bedimcode"
+          target="_blank"
+          >{{ $t("qualification3__describe") }}</a
+        >
       </p>
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  name: "AppFooter",
+};
+</script>
+<script setup>
+import { useThemeState } from "@/store";
+import { ref } from "vue";
+let storeData = ref(useThemeState());
+</script>
 
 <style lang="scss" scoped>
 .footer {
@@ -97,7 +112,6 @@
     @include min-screen(768px) {
       justify-self: flex-end;
     }
-    
   }
 
   &__social:hover {
@@ -107,7 +121,7 @@
   &__copy {
     font-size: var(--smaller-font-size);
     text-align: center;
-    color: var(--text-color-light);
+    color: var(--title-color);
     margin-top: var(--mb-3);
     @include min-screen(768px) {
       margin-top: 4.5rem;
@@ -117,7 +131,8 @@
   &__title,
   &__subtitle,
   &__link,
-  &__social {
+  &__social,
+  &__copy {
     color: #fff;
     fill: #fff;
   }
