@@ -13,7 +13,7 @@ module.exports = defineConfig({
       addStyleResource(config.module.rule("scss").oneOf(type))
     );
     config.plugin('html').tap(args => {
-      args[0].title = 'My Portfolio Website';
+      args[0].title = '吴富威自我介绍';
       return args;
     });
   },
