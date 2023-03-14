@@ -1,35 +1,45 @@
 <template>
   <section class="about section" id="about">
-    <h2 class="section__title" >{{ $t('about__title') }}</h2>
-    <span class="section__subtitle" >{{ $t('about__subtitle') }}</span>
+    <h2 class="section__title">{{ $t("about__title") }}</h2>
+    <span class="section__subtitle">{{ $t("about__subtitle") }}</span>
     <div class="about__container container grid">
-      <img src="/img/portfolio3.jpg" class="about__img">
+      <img :src="src" class="about__img" />
 
       <div class="about__data">
         <p class="about__description">
-          {{ $t('about__description') }}
+          {{ $t("about__description") }}
         </p>
 
         <div class="about__info">
           <div>
             <span class="about__info-title">32</span>
-            <span class="about__info-name" >{{ $t('about__info-name1') }}</span>
+            <span class="about__info-name">{{ $t("about__info-name1") }}</span>
           </div>
 
           <div>
             <span class="about__info-title">6+</span>
-            <span class="about__info-name" >{{ $t('about__info-name2') }}</span>
+            <span class="about__info-name">{{ $t("about__info-name2") }}</span>
           </div>
           <div>
             <span class="about__info-title"></span>
-            <span class="about__info-name" ></span>
+            <span class="about__info-name"></span>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
-
+<script>
+import { ref } from "vue";
+const src = ref(require("@/assets/img/portfolio3.jpg"));
+export default {
+  setup() {
+    return {
+      src,
+    };
+  },
+};
+</script>
 <style lang="scss" scoped>
 .about {
   &__container {
@@ -37,7 +47,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
     @include min-screen(768px) {
-      column-gap: 5rem; 
+      column-gap: 5rem;
     }
   }
   &__data {
@@ -86,6 +96,5 @@
     display: block;
     text-align: center;
   }
-
 }
 </style>

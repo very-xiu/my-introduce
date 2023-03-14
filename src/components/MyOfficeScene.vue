@@ -39,7 +39,7 @@ export default {
     // mac屏幕播放视频
     const setScreen = () => {
       const video = document.createElement('video')
-      video.src = '/3D/kda.mp4'
+      video.src = '3D/kda.mp4'
       video.muted = true
       video.playsInline = true
       video.autoplay = true
@@ -60,7 +60,7 @@ export default {
     const dracoLoader = new DRACOLoader()
     dracoLoader.setDecoderPath('/draco/')
     gltfLoader.setDRACOLoader(dracoLoader)
-    gltfLoader.load('/3D/officeScene.glb', (glb) => {
+    gltfLoader.load('3D/officeScene.glb', (glb) => {
       // console.log(glb.scene)
       glb.scene.scale.set(1.8, 1.8, 1.8)
       glb.scene.position.y = -1.5
