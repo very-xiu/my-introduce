@@ -67,8 +67,8 @@ export default {
         time: 'work__time4'
       },
       {
-        title: 'qualification4__title',
-        describe: 'qualification4__describe',
+        title: 'qualification5__title',
+        describe: 'qualification5__describe',
         time: 'work__time5'
       },
     ])
