@@ -45,6 +45,7 @@ export default {
     "qualification5__describe":"珠海-山南远宏科技有限公司",
     "work__time5":"2017/05-2020/03",
     "from__text":"来自",
+    "from__name":"珠海",
 
     "portfolio__title":"项目集",
     "portfolio__subtitle":"近期项目",

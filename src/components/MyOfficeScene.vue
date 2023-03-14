@@ -58,7 +58,7 @@ export default {
     // 加载glb模型
     const gltfLoader = new GLTFLoader()
     const dracoLoader = new DRACOLoader()
-    dracoLoader.setDecoderPath('/draco/')
+    dracoLoader.setDecoderPath('draco/')
     gltfLoader.setDRACOLoader(dracoLoader)
     gltfLoader.load('3D/officeScene.glb', (glb) => {
       // console.log(glb.scene)

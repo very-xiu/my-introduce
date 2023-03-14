@@ -35,7 +35,7 @@
           class="footer__copy"
           href="https://www.youtube.com/c/Bedimcode"
           target="_blank"
-          >{{ $t("qualification3__describe") }}</a
+          >{{ $t("from__name") }}</a
         >
       </p>
     </div>

@@ -44,6 +44,7 @@ export default {
     "qualification5__describe":"ZhuHai-Shannan Yuanhong Technology Co., Ltd",
     "work__time5":"2017/05-2020/03",
     "from__text":"from",
+    "from__name":"ZhuHai",
 
     "portfolio__title":"Portfolio",
     "portfolio__subtitle":"Most recent works",
